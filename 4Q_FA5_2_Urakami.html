@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 2</title>
+</head>
+<body>
+    <form style="display: inline;"><input type="text" id="userinput"></form>
+
+    <button id="add" onclick="a()">Add</button>
+    <button id="remove" onclick="r()">Remove</button>
+
+    <br>
+
+    <p id="s"></p>
+    <script>
+        var arr = [];
+        var c;
+        var d;
+        var f = 0;
+
+        function a(){
+            console.log(f);
+            f++;
+            if (f >= 8){
+                arr.shift();
+                arr.push(document.getElementById("userinput").value);
+                ce();
+                f = 7;
+            } else { 
+                arr.push(document.getElementById("userinput").value);
+                ce();
+            }
+            
+        }
+        function r(){
+            console.log(f);
+            arr.pop();
+            if (f > 0){
+                f--;
+            }
+            ce();
+        }
+        function ce(){
+            document.getElementById("s").innerHTML = " ";
+            c = 0;
+            while (c < 7){
+                if (arr[c] === undefined){
+                } else {
+                    document.getElementById("s").innerHTML += arr[c] + " ";
+                }
+                c++;
+            }
+            c = 0;
+            document.getElementById("userinput").value = "";
+            // 7
+        }
+
+        function sv(){
+
+        }
+    </script>
+</body>
+</html>
